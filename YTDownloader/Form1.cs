@@ -278,6 +278,7 @@ namespace YTDownloader
                 successMessagePanel.Visible = true;
                 dlConfigBox.Visible = false;
                 dlProgressDescription.Text = "Pobieranie zakoñczone sukcesem";
+                downloadButton.Text = "Pobierz";
             });
         }
 
