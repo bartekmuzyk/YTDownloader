@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "YTDownloader": {
+      "commandName": "Project"
+    },
+    "YTDownloader z przeglądarki": {
+      "commandName": "Project",
+      "commandLineArgs": "ytdl:https://www.youtube.com/watch?v=KKCi_85Hg9M"
+    },
+    "YTDownloader z linkiem jako argument": {
+      "commandName": "Project",
+      "commandLineArgs": "https://www.youtube.com/watch?v=KKCi_85Hg9M"
+    }
+  }
+}

@@ -10,6 +10,8 @@ namespace YTDownloader
 {
     public partial class Form1 : Form
     {
+        private const string GITHUB_REPO_URL = "https://github.com/bartekmuzyk/YTDownloader";
+
         private YoutubeClient _ytClient = new();
 
         private HttpClient _httpClient = new();
@@ -39,6 +41,39 @@ namespace YTDownloader
         private void Form1_Load(object sender, EventArgs e)
         {
             MaximumSize = MinimumSize = Size;
+
+            try
+            {
+                URLProtocol.RegisterProtocol();
+                Properties.Settings.Default.showExtensionMessage = false;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                if (Properties.Settings.Default.showExtensionMessage)
+                {
+                    MessageBox.Show("Mo¿esz jednorazowo uruchomiæ aplikacjê jako administrator. To pozwoli na wykonanie zmian w rejestrze potrzebnych do poprawnego dzia³ania wtyczki do przegl¹darki Google Chrome. Mo¿esz wy³¹czyæ ten komunikat w ustawieniach.", "Informacja dotycz¹ca wtyczki", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            Properties.Settings.Default.Save();
+
+            var url = URLProtocol.GetPassedArgument();
+
+            if (url == null && Environment.GetCommandLineArgs().Length > 1)
+            {
+                url = Environment.GetCommandLineArgs()[1];
+            }
+
+            if (url == $"{URLProtocol.PROTOCOL_NAME}:")
+            {
+                url = null;
+            }
+
+            if (url != null)
+            {
+                urlInput.Text = url;
+                BeginSearch();
+            }
         }
 
         private void SetLoadingVisible(bool visible)
@@ -59,7 +94,7 @@ namespace YTDownloader
             dlProgressDescription.Text = "Wybierz tryb";
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void BeginSearch()
         {
             var urlToSearch = urlInput.Text.Trim();
 
@@ -70,7 +105,7 @@ namespace YTDownloader
             }
 
             urlInput.Enabled = false;
-            ((Button)sender).Enabled = false;
+            searchBtn.Enabled = false;
 
             ResetControls();
             titleLabel.Text = "Wyszukiwanie...";
@@ -88,15 +123,29 @@ namespace YTDownloader
                         titleLabel.Text = videoInfo.Title;
                         channelLabel.Text = videoInfo.Author.ChannelTitle;
 
-                        var bestThumbnail = videoInfo.Thumbnails.OrderByDescending(thumbnail => thumbnail.Resolution.Area).First();
+                        if (Properties.Settings.Default.downloadThumbnails)
+                        {
+                            var thumbnails = videoInfo.Thumbnails.OrderByDescending(thumbnail => thumbnail.Resolution.Area);
+                            var thumbnailLoadedSuccessfully = false;
 
-                        try
-                        {
-                            thumbnailBox.Load(bestThumbnail.Url);
-                        }
-                        catch (ArgumentException)
-                        {
-                            MessageBox.Show("Nie uda³o siê za³adowaæ miniaturki. Pobieranie filmu powinno jednak nadal dzia³aæ.", "B³¹d podczas ³adowania miniaturki", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            foreach (var thumbnail in thumbnails)
+                            {
+                                try
+                                {
+                                    thumbnailBox.Load(thumbnail.Url);
+                                    thumbnailLoadedSuccessfully = true;
+                                    break;
+                                }
+                                catch (ArgumentException)
+                                {
+                                    continue;
+                                }
+                            }
+
+                            if (!thumbnailLoadedSuccessfully)
+                            {
+                                MessageBox.Show("Nie uda³o siê za³adowaæ miniaturki. Pobieranie filmu powinno jednak nadal dzia³aæ.", "B³¹d podczas ³adowania miniaturki", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
 
                         SetLoadingVisible(true);
@@ -124,7 +173,12 @@ namespace YTDownloader
             }
 
             urlInput.Enabled = true;
-            ((Button)sender).Enabled = true;
+            searchBtn.Enabled = true;
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            BeginSearch();
         }
 
         private void SetAvailableStreams(IOrderedEnumerable<MuxedStreamInfo> streams)
@@ -286,6 +340,26 @@ namespace YTDownloader
         {
             successMessagePanel.Visible = false;
             dlConfigBox.Visible = true;
+        }
+
+        private void settingsBtn_MouseHover(object sender, EventArgs e)
+        {
+            settingsLabel.Visible = true;
+        }
+
+        private void settingsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            settingsLabel.Visible = false;
+        }
+
+        private void githubLink_Click(object sender, EventArgs e)
+        {
+            BrowserOpener.OpenUrl(GITHUB_REPO_URL);
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            new SettingsForm().Show();
         }
     }
 }

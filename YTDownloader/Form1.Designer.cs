@@ -52,10 +52,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.githubLink = new System.Windows.Forms.ToolStripStatusLabel();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.settingsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).BeginInit();
             this.dlConfigBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).BeginInit();
             this.successMessagePanel.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // urlInput
@@ -299,11 +305,67 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.githubLink});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 314);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(457, 22);
+            this.statusStrip1.SizingGrip = false;
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatusLabel1.Text = "v2.0";
+            // 
+            // githubLink
+            // 
+            this.githubLink.Image = global::YTDownloader.Properties.Resources.github;
+            this.githubLink.IsLink = true;
+            this.githubLink.Name = "githubLink";
+            this.githubLink.Size = new System.Drawing.Size(61, 17);
+            this.githubLink.Text = "GitHub";
+            this.githubLink.Click += new System.EventHandler(this.githubLink_Click);
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Font = new System.Drawing.Font("Segoe Fluent Icons", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.settingsBtn.Location = new System.Drawing.Point(435, -3);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(25, 24);
+            this.settingsBtn.TabIndex = 11;
+            this.settingsBtn.Text = "";
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
+            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
+            // 
+            // settingsLabel
+            // 
+            this.settingsLabel.AutoSize = true;
+            this.settingsLabel.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.settingsLabel.Location = new System.Drawing.Point(373, 1);
+            this.settingsLabel.Name = "settingsLabel";
+            this.settingsLabel.Size = new System.Drawing.Size(62, 15);
+            this.settingsLabel.TabIndex = 12;
+            this.settingsLabel.Text = "Ustawienia";
+            this.settingsLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 316);
+            this.ClientSize = new System.Drawing.Size(457, 336);
+            this.Controls.Add(this.settingsLabel);
+            this.Controls.Add(this.settingsBtn);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.successMessagePanel);
             this.Controls.Add(this.loadingText);
             this.Controls.Add(this.loadingIcon);
@@ -314,9 +376,11 @@
             this.Controls.Add(this.thumbnailBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.urlInput);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YouTube Downloader";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).EndInit();
@@ -325,6 +389,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).EndInit();
             this.successMessagePanel.ResumeLayout(false);
             this.successMessagePanel.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +421,10 @@
         private Label label5;
         private Label label4;
         private Button successMessageCloseButton;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel githubLink;
+        private Button settingsBtn;
+        private Label settingsLabel;
     }
 }
