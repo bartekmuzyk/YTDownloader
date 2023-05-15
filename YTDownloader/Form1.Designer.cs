@@ -29,371 +29,367 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.urlInput = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.thumbnailBox = new System.Windows.Forms.PictureBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.channelLabel = new System.Windows.Forms.Label();
-            this.dlConfigBox = new System.Windows.Forms.GroupBox();
-            this.dlProgressDescription = new System.Windows.Forms.Label();
-            this.dlProgressBar = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dlQualityChooser = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dlModeChooser = new System.Windows.Forms.ComboBox();
-            this.downloadButton = new System.Windows.Forms.Button();
-            this.loadingIcon = new System.Windows.Forms.PictureBox();
-            this.loadingText = new System.Windows.Forms.Label();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.successMessagePanel = new System.Windows.Forms.Panel();
-            this.successMessageCloseButton = new System.Windows.Forms.Button();
-            this.successMessagePathLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.githubLink = new System.Windows.Forms.ToolStripStatusLabel();
-            this.settingsBtn = new System.Windows.Forms.Button();
-            this.settingsLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).BeginInit();
-            this.dlConfigBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).BeginInit();
-            this.successMessagePanel.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.SuspendLayout();
+            urlInput = new TextBox();
+            label1 = new Label();
+            searchBtn = new Button();
+            thumbnailBox = new PictureBox();
+            titleLabel = new Label();
+            channelLabel = new Label();
+            dlConfigBox = new GroupBox();
+            dlProgressDescription = new Label();
+            dlProgressBar = new ProgressBar();
+            label3 = new Label();
+            dlQualityChooser = new ComboBox();
+            label2 = new Label();
+            dlModeChooser = new ComboBox();
+            downloadButton = new Button();
+            loadingIcon = new PictureBox();
+            loadingText = new Label();
+            saveFileDialog = new SaveFileDialog();
+            successMessagePanel = new Panel();
+            successMessageCloseButton = new Button();
+            successMessagePathLabel = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
+            githubLink = new ToolStripStatusLabel();
+            settingsBtn = new Button();
+            settingsLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)thumbnailBox).BeginInit();
+            dlConfigBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)loadingIcon).BeginInit();
+            successMessagePanel.SuspendLayout();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // urlInput
             // 
-            this.urlInput.Location = new System.Drawing.Point(12, 27);
-            this.urlInput.Name = "urlInput";
-            this.urlInput.Size = new System.Drawing.Size(433, 23);
-            this.urlInput.TabIndex = 0;
+            urlInput.Location = new Point(12, 27);
+            urlInput.Name = "urlInput";
+            urlInput.Size = new Size(433, 23);
+            urlInput.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Adres URL filmu YouTube";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 16);
+            label1.TabIndex = 1;
+            label1.Text = "Adres URL filmu YouTube";
             // 
             // searchBtn
             // 
-            this.searchBtn.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.searchBtn.Location = new System.Drawing.Point(352, 56);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(93, 28);
-            this.searchBtn.TabIndex = 2;
-            this.searchBtn.Text = "Wyszukaj";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            searchBtn.Font = new Font("Segoe UI Variable Display Semib", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBtn.Location = new Point(352, 56);
+            searchBtn.Name = "searchBtn";
+            searchBtn.Size = new Size(93, 28);
+            searchBtn.TabIndex = 2;
+            searchBtn.Text = "Wyszukaj";
+            searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtn_Click;
             // 
             // thumbnailBox
             // 
-            this.thumbnailBox.Location = new System.Drawing.Point(12, 85);
-            this.thumbnailBox.Name = "thumbnailBox";
-            this.thumbnailBox.Size = new System.Drawing.Size(160, 90);
-            this.thumbnailBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.thumbnailBox.TabIndex = 3;
-            this.thumbnailBox.TabStop = false;
+            thumbnailBox.Location = new Point(12, 85);
+            thumbnailBox.Name = "thumbnailBox";
+            thumbnailBox.Size = new Size(160, 90);
+            thumbnailBox.SizeMode = PictureBoxSizeMode.Zoom;
+            thumbnailBox.TabIndex = 3;
+            thumbnailBox.TabStop = false;
             // 
             // titleLabel
             // 
-            this.titleLabel.AutoEllipsis = true;
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.Location = new System.Drawing.Point(178, 85);
-            this.titleLabel.MaximumSize = new System.Drawing.Size(280, 26);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(0, 26);
-            this.titleLabel.TabIndex = 4;
+            titleLabel.AutoEllipsis = true;
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Segoe UI Variable Display Semib", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            titleLabel.Location = new Point(178, 85);
+            titleLabel.MaximumSize = new Size(280, 26);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(0, 26);
+            titleLabel.TabIndex = 4;
             // 
             // channelLabel
             // 
-            this.channelLabel.AutoEllipsis = true;
-            this.channelLabel.AutoSize = true;
-            this.channelLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.channelLabel.Location = new System.Drawing.Point(178, 115);
-            this.channelLabel.MaximumSize = new System.Drawing.Size(280, 16);
-            this.channelLabel.Name = "channelLabel";
-            this.channelLabel.Size = new System.Drawing.Size(0, 16);
-            this.channelLabel.TabIndex = 5;
+            channelLabel.AutoEllipsis = true;
+            channelLabel.AutoSize = true;
+            channelLabel.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            channelLabel.Location = new Point(178, 115);
+            channelLabel.MaximumSize = new Size(280, 16);
+            channelLabel.Name = "channelLabel";
+            channelLabel.Size = new Size(0, 16);
+            channelLabel.TabIndex = 5;
             // 
             // dlConfigBox
             // 
-            this.dlConfigBox.Controls.Add(this.dlProgressDescription);
-            this.dlConfigBox.Controls.Add(this.dlProgressBar);
-            this.dlConfigBox.Controls.Add(this.label3);
-            this.dlConfigBox.Controls.Add(this.dlQualityChooser);
-            this.dlConfigBox.Controls.Add(this.label2);
-            this.dlConfigBox.Controls.Add(this.dlModeChooser);
-            this.dlConfigBox.Controls.Add(this.downloadButton);
-            this.dlConfigBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dlConfigBox.Location = new System.Drawing.Point(12, 181);
-            this.dlConfigBox.Name = "dlConfigBox";
-            this.dlConfigBox.Size = new System.Drawing.Size(433, 130);
-            this.dlConfigBox.TabIndex = 6;
-            this.dlConfigBox.TabStop = false;
-            this.dlConfigBox.Text = "Konfiguracja pobierania";
-            this.dlConfigBox.Visible = false;
+            dlConfigBox.Controls.Add(dlProgressDescription);
+            dlConfigBox.Controls.Add(dlProgressBar);
+            dlConfigBox.Controls.Add(label3);
+            dlConfigBox.Controls.Add(dlQualityChooser);
+            dlConfigBox.Controls.Add(label2);
+            dlConfigBox.Controls.Add(dlModeChooser);
+            dlConfigBox.Controls.Add(downloadButton);
+            dlConfigBox.Font = new Font("Segoe UI Variable Display Semib", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dlConfigBox.Location = new Point(12, 181);
+            dlConfigBox.Name = "dlConfigBox";
+            dlConfigBox.Size = new Size(433, 130);
+            dlConfigBox.TabIndex = 6;
+            dlConfigBox.TabStop = false;
+            dlConfigBox.Text = "Konfiguracja pobierania";
+            dlConfigBox.Visible = false;
             // 
             // dlProgressDescription
             // 
-            this.dlProgressDescription.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dlProgressDescription.Location = new System.Drawing.Point(6, 81);
-            this.dlProgressDescription.Name = "dlProgressDescription";
-            this.dlProgressDescription.Size = new System.Drawing.Size(421, 17);
-            this.dlProgressDescription.TabIndex = 6;
-            this.dlProgressDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            dlProgressDescription.Font = new Font("Segoe UI Variable Display", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dlProgressDescription.Location = new Point(6, 81);
+            dlProgressDescription.Name = "dlProgressDescription";
+            dlProgressDescription.Size = new Size(421, 17);
+            dlProgressDescription.TabIndex = 6;
+            dlProgressDescription.TextAlign = ContentAlignment.TopCenter;
             // 
             // dlProgressBar
             // 
-            this.dlProgressBar.Location = new System.Drawing.Point(6, 101);
-            this.dlProgressBar.Name = "dlProgressBar";
-            this.dlProgressBar.Size = new System.Drawing.Size(421, 23);
-            this.dlProgressBar.TabIndex = 5;
+            dlProgressBar.Location = new Point(6, 101);
+            dlProgressBar.Name = "dlProgressBar";
+            dlProgressBar.Size = new Size(421, 23);
+            dlProgressBar.TabIndex = 5;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(146, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 26);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Jakość";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Variable Display", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(146, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 26);
+            label3.TabIndex = 4;
+            label3.Text = "Jakość";
             // 
             // dlQualityChooser
             // 
-            this.dlQualityChooser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dlQualityChooser.DropDownWidth = 210;
-            this.dlQualityChooser.Enabled = false;
-            this.dlQualityChooser.FormattingEnabled = true;
-            this.dlQualityChooser.Location = new System.Drawing.Point(146, 47);
-            this.dlQualityChooser.Name = "dlQualityChooser";
-            this.dlQualityChooser.Size = new System.Drawing.Size(182, 25);
-            this.dlQualityChooser.TabIndex = 3;
-            this.dlQualityChooser.SelectedIndexChanged += new System.EventHandler(this.dlQualityChooser_SelectedIndexChanged);
+            dlQualityChooser.DropDownStyle = ComboBoxStyle.DropDownList;
+            dlQualityChooser.DropDownWidth = 210;
+            dlQualityChooser.Enabled = false;
+            dlQualityChooser.FormattingEnabled = true;
+            dlQualityChooser.Location = new Point(146, 47);
+            dlQualityChooser.Name = "dlQualityChooser";
+            dlQualityChooser.Size = new Size(182, 25);
+            dlQualityChooser.TabIndex = 3;
+            dlQualityChooser.SelectedIndexChanged += dlQualityChooser_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(9, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 26);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tryb";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Variable Display", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(9, 18);
+            label2.Name = "label2";
+            label2.Size = new Size(52, 26);
+            label2.TabIndex = 2;
+            label2.Text = "Tryb";
             // 
             // dlModeChooser
             // 
-            this.dlModeChooser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dlModeChooser.FormattingEnabled = true;
-            this.dlModeChooser.Items.AddRange(new object[] {
-            "Wideo + audio",
-            "Tylko wideo",
-            "Tylko audio"});
-            this.dlModeChooser.Location = new System.Drawing.Point(9, 47);
-            this.dlModeChooser.Name = "dlModeChooser";
-            this.dlModeChooser.Size = new System.Drawing.Size(121, 25);
-            this.dlModeChooser.TabIndex = 1;
-            this.dlModeChooser.SelectedIndexChanged += new System.EventHandler(this.dlModeChooser_SelectedIndexChanged);
+            dlModeChooser.DropDownStyle = ComboBoxStyle.DropDownList;
+            dlModeChooser.FormattingEnabled = true;
+            dlModeChooser.Items.AddRange(new object[] { "Wideo + audio", "Tylko wideo", "Tylko audio" });
+            dlModeChooser.Location = new Point(9, 47);
+            dlModeChooser.Name = "dlModeChooser";
+            dlModeChooser.Size = new Size(121, 25);
+            dlModeChooser.TabIndex = 1;
+            dlModeChooser.SelectedIndexChanged += dlModeChooser_SelectedIndexChanged;
             // 
             // downloadButton
             // 
-            this.downloadButton.Enabled = false;
-            this.downloadButton.Location = new System.Drawing.Point(343, 14);
-            this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(87, 62);
-            this.downloadButton.TabIndex = 0;
-            this.downloadButton.Text = "Pobierz";
-            this.downloadButton.UseVisualStyleBackColor = true;
-            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
+            downloadButton.Enabled = false;
+            downloadButton.Location = new Point(343, 14);
+            downloadButton.Name = "downloadButton";
+            downloadButton.Size = new Size(87, 62);
+            downloadButton.TabIndex = 0;
+            downloadButton.Text = "Pobierz";
+            downloadButton.UseVisualStyleBackColor = true;
+            downloadButton.Click += downloadButton_Click;
             // 
             // loadingIcon
             // 
-            this.loadingIcon.Image = global::YTDownloader.Properties.Resources.loading;
-            this.loadingIcon.Location = new System.Drawing.Point(178, 140);
-            this.loadingIcon.Name = "loadingIcon";
-            this.loadingIcon.Size = new System.Drawing.Size(35, 35);
-            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loadingIcon.TabIndex = 7;
-            this.loadingIcon.TabStop = false;
-            this.loadingIcon.Visible = false;
+            loadingIcon.Image = Properties.Resources.loading;
+            loadingIcon.Location = new Point(178, 140);
+            loadingIcon.Name = "loadingIcon";
+            loadingIcon.Size = new Size(35, 35);
+            loadingIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            loadingIcon.TabIndex = 7;
+            loadingIcon.TabStop = false;
+            loadingIcon.Visible = false;
             // 
             // loadingText
             // 
-            this.loadingText.AutoSize = true;
-            this.loadingText.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loadingText.Location = new System.Drawing.Point(219, 136);
-            this.loadingText.Name = "loadingText";
-            this.loadingText.Size = new System.Drawing.Size(158, 42);
-            this.loadingText.TabIndex = 8;
-            this.loadingText.Text = "Pobieranie informacji\r\no strumieniach...";
-            this.loadingText.Visible = false;
+            loadingText.AutoSize = true;
+            loadingText.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            loadingText.Location = new Point(219, 136);
+            loadingText.Name = "loadingText";
+            loadingText.Size = new Size(158, 42);
+            loadingText.TabIndex = 8;
+            loadingText.Text = "Pobieranie informacji\r\no strumieniach...";
+            loadingText.Visible = false;
             // 
             // saveFileDialog
             // 
-            this.saveFileDialog.Title = "Zapisz pobrany strumień do";
-            this.saveFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog_FileOk);
+            saveFileDialog.Title = "Zapisz pobrany strumień do";
+            saveFileDialog.FileOk += saveFileDialog_FileOk;
             // 
             // successMessagePanel
             // 
-            this.successMessagePanel.Controls.Add(this.successMessageCloseButton);
-            this.successMessagePanel.Controls.Add(this.successMessagePathLabel);
-            this.successMessagePanel.Controls.Add(this.label6);
-            this.successMessagePanel.Controls.Add(this.label5);
-            this.successMessagePanel.Controls.Add(this.label4);
-            this.successMessagePanel.Location = new System.Drawing.Point(12, 181);
-            this.successMessagePanel.Name = "successMessagePanel";
-            this.successMessagePanel.Size = new System.Drawing.Size(433, 130);
-            this.successMessagePanel.TabIndex = 9;
-            this.successMessagePanel.Visible = false;
+            successMessagePanel.Controls.Add(successMessageCloseButton);
+            successMessagePanel.Controls.Add(successMessagePathLabel);
+            successMessagePanel.Controls.Add(label6);
+            successMessagePanel.Controls.Add(label5);
+            successMessagePanel.Controls.Add(label4);
+            successMessagePanel.Location = new Point(12, 181);
+            successMessagePanel.Name = "successMessagePanel";
+            successMessagePanel.Size = new Size(433, 130);
+            successMessagePanel.TabIndex = 9;
+            successMessagePanel.Visible = false;
             // 
             // successMessageCloseButton
             // 
-            this.successMessageCloseButton.Location = new System.Drawing.Point(142, 101);
-            this.successMessageCloseButton.Name = "successMessageCloseButton";
-            this.successMessageCloseButton.Size = new System.Drawing.Size(149, 23);
-            this.successMessageCloseButton.TabIndex = 4;
-            this.successMessageCloseButton.Text = "Wróć do konfiguracji";
-            this.successMessageCloseButton.UseVisualStyleBackColor = true;
-            this.successMessageCloseButton.Click += new System.EventHandler(this.successMessageCloseButton_Click);
+            successMessageCloseButton.Location = new Point(142, 97);
+            successMessageCloseButton.Name = "successMessageCloseButton";
+            successMessageCloseButton.Size = new Size(149, 27);
+            successMessageCloseButton.TabIndex = 4;
+            successMessageCloseButton.Text = "Wróć do konfiguracji";
+            successMessageCloseButton.UseVisualStyleBackColor = true;
+            successMessageCloseButton.Click += successMessageCloseButton_Click;
             // 
             // successMessagePathLabel
             // 
-            this.successMessagePathLabel.AutoEllipsis = true;
-            this.successMessagePathLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.successMessagePathLabel.Location = new System.Drawing.Point(0, 53);
-            this.successMessagePathLabel.Name = "successMessagePathLabel";
-            this.successMessagePathLabel.Size = new System.Drawing.Size(433, 40);
-            this.successMessagePathLabel.TabIndex = 3;
-            this.successMessagePathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            successMessagePathLabel.AutoEllipsis = true;
+            successMessagePathLabel.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            successMessagePathLabel.Location = new Point(0, 53);
+            successMessagePathLabel.Name = "successMessagePathLabel";
+            successMessagePathLabel.Size = new Size(433, 40);
+            successMessagePathLabel.TabIndex = 3;
+            successMessagePathLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(0, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(433, 25);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Pobrany plik został zapisany w:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(0, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(433, 25);
+            label6.TabIndex = 2;
+            label6.Text = "Pobrany plik został zapisany w:";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(46, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(344, 28);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Pobieranie zakończone sukcesem!";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Variable Display", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(46, 3);
+            label5.Name = "label5";
+            label5.Size = new Size(344, 28);
+            label5.TabIndex = 1;
+            label5.Text = "Pobieranie zakończone sukcesem!";
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe Fluent Icons", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 32);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "";
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe Fluent Icons", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(3, 3);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 32);
+            label4.TabIndex = 0;
+            label4.Text = "";
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.githubLink});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 314);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(457, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 10;
-            this.statusStrip1.Text = "statusStrip1";
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, githubLink });
+            statusStrip1.Location = new Point(0, 314);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(457, 22);
+            statusStrip1.SizingGrip = false;
+            statusStrip1.TabIndex = 10;
+            statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(30, 17);
-            this.toolStripStatusLabel1.Text = "v2.0";
+            toolStripStatusLabel1.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.RightToLeft = RightToLeft.No;
+            toolStripStatusLabel1.Size = new Size(30, 17);
+            toolStripStatusLabel1.Text = "v3.0";
             // 
             // githubLink
             // 
-            this.githubLink.Image = global::YTDownloader.Properties.Resources.github;
-            this.githubLink.IsLink = true;
-            this.githubLink.Name = "githubLink";
-            this.githubLink.Size = new System.Drawing.Size(61, 17);
-            this.githubLink.Text = "GitHub";
-            this.githubLink.Click += new System.EventHandler(this.githubLink_Click);
+            githubLink.Image = Properties.Resources.github;
+            githubLink.IsLink = true;
+            githubLink.Name = "githubLink";
+            githubLink.Size = new Size(61, 17);
+            githubLink.Text = "GitHub";
+            githubLink.Click += githubLink_Click;
             // 
             // settingsBtn
             // 
-            this.settingsBtn.Font = new System.Drawing.Font("Segoe Fluent Icons", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.settingsBtn.Location = new System.Drawing.Point(435, -3);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(25, 24);
-            this.settingsBtn.TabIndex = 11;
-            this.settingsBtn.Text = "";
-            this.settingsBtn.UseVisualStyleBackColor = true;
-            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
-            this.settingsBtn.MouseLeave += new System.EventHandler(this.settingsBtn_MouseLeave);
-            this.settingsBtn.MouseHover += new System.EventHandler(this.settingsBtn_MouseHover);
+            settingsBtn.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            settingsBtn.Location = new Point(435, -3);
+            settingsBtn.Name = "settingsBtn";
+            settingsBtn.Size = new Size(25, 24);
+            settingsBtn.TabIndex = 11;
+            settingsBtn.Text = "";
+            settingsBtn.UseVisualStyleBackColor = true;
+            settingsBtn.Click += settingsBtn_Click;
+            settingsBtn.MouseLeave += settingsBtn_MouseLeave;
+            settingsBtn.MouseHover += settingsBtn_MouseHover;
             // 
             // settingsLabel
             // 
-            this.settingsLabel.AutoSize = true;
-            this.settingsLabel.Font = new System.Drawing.Font("Segoe UI Variable Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.settingsLabel.Location = new System.Drawing.Point(373, 1);
-            this.settingsLabel.Name = "settingsLabel";
-            this.settingsLabel.Size = new System.Drawing.Size(62, 15);
-            this.settingsLabel.TabIndex = 12;
-            this.settingsLabel.Text = "Ustawienia";
-            this.settingsLabel.Visible = false;
+            settingsLabel.AutoSize = true;
+            settingsLabel.Font = new Font("Segoe UI Variable Small", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            settingsLabel.Location = new Point(373, 1);
+            settingsLabel.Name = "settingsLabel";
+            settingsLabel.Size = new Size(62, 15);
+            settingsLabel.TabIndex = 12;
+            settingsLabel.Text = "Ustawienia";
+            settingsLabel.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 336);
-            this.Controls.Add(this.settingsLabel);
-            this.Controls.Add(this.settingsBtn);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.successMessagePanel);
-            this.Controls.Add(this.loadingText);
-            this.Controls.Add(this.loadingIcon);
-            this.Controls.Add(this.dlConfigBox);
-            this.Controls.Add(this.channelLabel);
-            this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.searchBtn);
-            this.Controls.Add(this.thumbnailBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.urlInput);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YouTube Downloader";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.thumbnailBox)).EndInit();
-            this.dlConfigBox.ResumeLayout(false);
-            this.dlConfigBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).EndInit();
-            this.successMessagePanel.ResumeLayout(false);
-            this.successMessagePanel.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(457, 336);
+            Controls.Add(settingsLabel);
+            Controls.Add(settingsBtn);
+            Controls.Add(statusStrip1);
+            Controls.Add(successMessagePanel);
+            Controls.Add(loadingText);
+            Controls.Add(loadingIcon);
+            Controls.Add(dlConfigBox);
+            Controls.Add(channelLabel);
+            Controls.Add(titleLabel);
+            Controls.Add(searchBtn);
+            Controls.Add(thumbnailBox);
+            Controls.Add(label1);
+            Controls.Add(urlInput);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "YouTube Downloader";
+            FormClosing += Form1_FormClosing;
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)thumbnailBox).EndInit();
+            dlConfigBox.ResumeLayout(false);
+            dlConfigBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)loadingIcon).EndInit();
+            successMessagePanel.ResumeLayout(false);
+            successMessagePanel.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

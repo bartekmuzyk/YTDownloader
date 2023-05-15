@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Transitions;
 
 namespace YTDownloader
 {
@@ -17,18 +18,58 @@ namespace YTDownloader
             InitializeComponent();
         }
 
+        private void SlideFromBottom(Control control)
+        {
+            var originalTop = control.Top;
+            var originalColor = control.ForeColor;
+
+            var transition = new Transition(new TransitionType_Deceleration(300));
+            transition.add(control, "Top", originalTop);
+            transition.add(control, "ForeColor", originalColor);
+
+            control.ForeColor = Color.FromArgb(0, BackColor);
+            control.Top = originalTop + 25;
+
+            transition.run();
+        }
+
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.darkMode) DarkMode.AutoDarkMode(this);
+
             MaximumSize = MinimumSize = Size;
+
+            titleLabel.Visible = false;
+            settingsPanel.Visible = false;
+
+            Task.Delay(40).GetAwaiter().OnCompleted(() =>
+            {
+                titleLabel.Visible = true;
+                SlideFromBottom(titleLabel);
+            });
+            Task.Delay(170).GetAwaiter().OnCompleted(() =>
+            {
+                settingsPanel.Visible = true;
+                SlideFromBottom(settingsPanel);
+            });
 
             downloadThumbnailsCheckBox.Checked = Properties.Settings.Default.downloadThumbnails;
             showExtensionMessageCheckBox.Checked = Properties.Settings.Default.showExtensionMessage;
+            darkModeCheckBox.Checked = Properties.Settings.Default.darkMode;
+            showNotificationCheckBox.Checked = Properties.Settings.Default.showNotification;
         }
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.downloadThumbnails = downloadThumbnailsCheckBox.Checked;
             Properties.Settings.Default.showExtensionMessage = showExtensionMessageCheckBox.Checked;
+
+            if (!Properties.Settings.Default.darkMode && darkModeCheckBox.Checked)
+            {
+                MessageBox.Show("Tryb ciemny zostanie zaaplikowany po restarcie aplikacji.");
+            }
+            Properties.Settings.Default.darkMode = darkModeCheckBox.Checked;
+            Properties.Settings.Default.showNotification = showNotificationCheckBox.Checked;
 
             Properties.Settings.Default.Save();
         }

@@ -1,6 +1,8 @@
 using AngleSharp.Common;
+using Microsoft.Toolkit.Uwp.Notifications;
 using Syroot.Windows.IO;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using YoutubeExplode;
 using YoutubeExplode.Exceptions;
@@ -14,8 +16,6 @@ namespace YTDownloader
 
         private YoutubeClient _ytClient = new();
 
-        private HttpClient _httpClient = new();
-
         private StreamManifest? _currentStreamManifest = null;
 
         private IOrderedEnumerable<IStreamInfo>? _availableStreams = null;
@@ -23,6 +23,11 @@ namespace YTDownloader
         private IStreamInfo? _chosenStream = null;
 
         private CancellationTokenSource? _downloadCancellationTokenSource = null;
+
+        private bool downloadInProgress
+        {
+            get => _downloadCancellationTokenSource != null;
+        }
 
         private bool _downloadCancelled = false;
 
@@ -40,6 +45,10 @@ namespace YTDownloader
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.darkMode) DarkMode.AutoDarkMode(this);
+
+            ControlDecoration.MakeControlRounded(dlProgressBar, 1);
+
             MaximumSize = MinimumSize = Size;
 
             try
@@ -74,6 +83,21 @@ namespace YTDownloader
                 urlInput.Text = url;
                 BeginSearch();
             }
+
+            ToastNotificationManagerCompat.OnActivated += ToastNotificationManagerCompat_OnActivated;
+        }
+
+        private void ToastNotificationManagerCompat_OnActivated(ToastNotificationActivatedEventArgsCompat e)
+        {
+            Invoke(() =>
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+                BringToFront();
+                TopMost = true;
+                Focus();
+                TopMost = false;
+            });
         }
 
         private void SetLoadingVisible(bool visible)
@@ -185,7 +209,7 @@ namespace YTDownloader
         {
             _availableStreams = streams;
 
-            var friendlyStreamNames = streams.Select(stream => 
+            var friendlyStreamNames = streams.Select(stream =>
                 $"{stream.Container.Name} {stream.VideoQuality.Label} {stream.Size}"
             ).ToArray();
             dlQualityChooser.Items.Add("Najlepszy strumieñ");
@@ -282,7 +306,7 @@ namespace YTDownloader
             saveFileDialog.Filter = $"Plik {extension.ToUpper()}|*.{extension}";
             saveFileDialog.FileName = new Regex("[<>:\"/\\\\|?*]").Replace(titleLabel.Text, "-");  // Remove Windows illegal file name characters
             var dialogResult = saveFileDialog.ShowDialog();
-            
+
             if (dialogResult == DialogResult.OK)
             {
                 self.Text = "Anuluj";
@@ -300,7 +324,8 @@ namespace YTDownloader
             var downloadTask = _ytClient.Videos.Streams.DownloadAsync(
                 _chosenStream!,
                 targetPath,
-                new ProgressReportReceiver(progress => {
+                new ProgressReportReceiver(progress =>
+                {
                     var progressAsPercentage = (int)Math.Ceiling(progress * 100d);
                     dlProgressDescription.Text = $"Pobieranie... ({progressAsPercentage}%)";
 
@@ -327,6 +352,11 @@ namespace YTDownloader
                     dlProgressDescription.Text = "Anulowano pobieranie.";
                     return;
                 }
+
+                new ToastContentBuilder()
+                    .AddText("YouTube Downloader zakoñczy³ pobieranie")
+                    .AddText("Kliknij tutaj, aby przywo³aæ okno.")
+                    .Show();
 
                 successMessagePathLabel.Text = targetPath;
                 successMessagePanel.Visible = true;
@@ -360,6 +390,24 @@ namespace YTDownloader
         private void settingsBtn_Click(object sender, EventArgs e)
         {
             new SettingsForm().Show();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (downloadInProgress)
+            {
+                var result = MessageBox.Show("Zamkniêcie przerwie pobieranie. Czy na pewno chcesz wyjœæ z aplikacji?", "Pobieranie w toku", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+
+            if (!e.Cancel)
+            {
+                ToastNotificationManagerCompat.Uninstall();
+            }
         }
     }
 }

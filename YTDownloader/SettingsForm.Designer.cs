@@ -28,86 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.downloadThumbnailsCheckBox = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.showExtensionMessageCheckBox = new System.Windows.Forms.CheckBox();
-            this.SuspendLayout();
+            titleLabel = new Label();
+            downloadThumbnailsCheckBox = new CheckBox();
+            label2 = new Label();
+            showExtensionMessageCheckBox = new CheckBox();
+            darkModeCheckBox = new CheckBox();
+            showNotificationCheckBox = new CheckBox();
+            settingsPanel = new Panel();
+            settingsPanel.SuspendLayout();
+            SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ustawienia YouTube Downloader";
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Segoe UI Variable Display", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            titleLabel.Location = new Point(12, 9);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(385, 32);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Ustawienia YouTube Downloader";
             // 
             // downloadThumbnailsCheckBox
             // 
-            this.downloadThumbnailsCheckBox.AutoSize = true;
-            this.downloadThumbnailsCheckBox.Checked = true;
-            this.downloadThumbnailsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.downloadThumbnailsCheckBox.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.downloadThumbnailsCheckBox.Location = new System.Drawing.Point(12, 54);
-            this.downloadThumbnailsCheckBox.Name = "downloadThumbnailsCheckBox";
-            this.downloadThumbnailsCheckBox.Size = new System.Drawing.Size(125, 20);
-            this.downloadThumbnailsCheckBox.TabIndex = 1;
-            this.downloadThumbnailsCheckBox.Text = "Pobieraj miniaturki";
-            this.downloadThumbnailsCheckBox.UseVisualStyleBackColor = true;
+            downloadThumbnailsCheckBox.AutoSize = true;
+            downloadThumbnailsCheckBox.Checked = true;
+            downloadThumbnailsCheckBox.CheckState = CheckState.Checked;
+            downloadThumbnailsCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            downloadThumbnailsCheckBox.Location = new Point(3, 3);
+            downloadThumbnailsCheckBox.Name = "downloadThumbnailsCheckBox";
+            downloadThumbnailsCheckBox.Size = new Size(125, 20);
+            downloadThumbnailsCheckBox.TabIndex = 1;
+            downloadThumbnailsCheckBox.Text = "Pobieraj miniaturki";
+            downloadThumbnailsCheckBox.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(186, 155);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ustawienia zostaną zapisane po zamknięciu tego okna.";
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Variable Small", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(186, 187);
+            label2.Name = "label2";
+            label2.Size = new Size(301, 16);
+            label2.TabIndex = 2;
+            label2.Text = "Ustawienia zostaną zapisane po zamknięciu tego okna.";
             // 
             // showExtensionMessageCheckBox
             // 
-            this.showExtensionMessageCheckBox.AutoSize = true;
-            this.showExtensionMessageCheckBox.Checked = true;
-            this.showExtensionMessageCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.showExtensionMessageCheckBox.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.showExtensionMessageCheckBox.Location = new System.Drawing.Point(12, 80);
-            this.showExtensionMessageCheckBox.Name = "showExtensionMessageCheckBox";
-            this.showExtensionMessageCheckBox.Size = new System.Drawing.Size(265, 20);
-            this.showExtensionMessageCheckBox.TabIndex = 3;
-            this.showExtensionMessageCheckBox.Text = "Pokazuj komunikat o rozszerzeniu przy starcie";
-            this.showExtensionMessageCheckBox.UseVisualStyleBackColor = true;
+            showExtensionMessageCheckBox.AutoSize = true;
+            showExtensionMessageCheckBox.Checked = true;
+            showExtensionMessageCheckBox.CheckState = CheckState.Checked;
+            showExtensionMessageCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            showExtensionMessageCheckBox.Location = new Point(3, 29);
+            showExtensionMessageCheckBox.Name = "showExtensionMessageCheckBox";
+            showExtensionMessageCheckBox.Size = new Size(265, 20);
+            showExtensionMessageCheckBox.TabIndex = 3;
+            showExtensionMessageCheckBox.Text = "Pokazuj komunikat o rozszerzeniu przy starcie";
+            showExtensionMessageCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // darkModeCheckBox
+            // 
+            darkModeCheckBox.AutoSize = true;
+            darkModeCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            darkModeCheckBox.Location = new Point(3, 55);
+            darkModeCheckBox.Name = "darkModeCheckBox";
+            darkModeCheckBox.Size = new Size(89, 20);
+            darkModeCheckBox.TabIndex = 4;
+            darkModeCheckBox.Text = "Tryb ciemny";
+            darkModeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // showNotificationCheckBox
+            // 
+            showNotificationCheckBox.AutoSize = true;
+            showNotificationCheckBox.Checked = true;
+            showNotificationCheckBox.CheckState = CheckState.Checked;
+            showNotificationCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            showNotificationCheckBox.Location = new Point(3, 81);
+            showNotificationCheckBox.Name = "showNotificationCheckBox";
+            showNotificationCheckBox.Size = new Size(285, 20);
+            showNotificationCheckBox.TabIndex = 5;
+            showNotificationCheckBox.Text = "Pokaż powiadomienie po zakończeniu pobierania";
+            showNotificationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // settingsPanel
+            // 
+            settingsPanel.Controls.Add(downloadThumbnailsCheckBox);
+            settingsPanel.Controls.Add(showNotificationCheckBox);
+            settingsPanel.Controls.Add(showExtensionMessageCheckBox);
+            settingsPanel.Controls.Add(darkModeCheckBox);
+            settingsPanel.Location = new Point(12, 44);
+            settingsPanel.Name = "settingsPanel";
+            settingsPanel.Size = new Size(475, 109);
+            settingsPanel.TabIndex = 6;
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 180);
-            this.Controls.Add(this.showExtensionMessageCheckBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.downloadThumbnailsCheckBox);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SettingsForm";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ustawienia";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SettingsForm_FormClosed);
-            this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(499, 212);
+            Controls.Add(settingsPanel);
+            Controls.Add(label2);
+            Controls.Add(titleLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SettingsForm";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Ustawienia";
+            FormClosed += SettingsForm_FormClosed;
+            Load += SettingsForm_Load;
+            settingsPanel.ResumeLayout(false);
+            settingsPanel.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label titleLabel;
         private CheckBox downloadThumbnailsCheckBox;
         private Label label2;
         private CheckBox showExtensionMessageCheckBox;
+        private CheckBox darkModeCheckBox;
+        private CheckBox showNotificationCheckBox;
+        private Panel settingsPanel;
     }
 }
