@@ -317,8 +317,8 @@
             toolStripStatusLabel1.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.RightToLeft = RightToLeft.No;
-            toolStripStatusLabel1.Size = new Size(30, 17);
-            toolStripStatusLabel1.Text = "v3.0";
+            toolStripStatusLabel1.Size = new Size(28, 17);
+            toolStripStatusLabel1.Text = "v3.1";
             // 
             // githubLink
             // 
@@ -331,10 +331,10 @@
             // 
             // settingsBtn
             // 
-            settingsBtn.Font = new Font("Segoe Fluent Icons", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            settingsBtn.Location = new Point(435, -3);
+            settingsBtn.Font = new Font("Segoe Fluent Icons", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            settingsBtn.Location = new Point(317, 56);
             settingsBtn.Name = "settingsBtn";
-            settingsBtn.Size = new Size(25, 24);
+            settingsBtn.Size = new Size(32, 28);
             settingsBtn.TabIndex = 11;
             settingsBtn.Text = "";
             settingsBtn.UseVisualStyleBackColor = true;
@@ -345,10 +345,10 @@
             // settingsLabel
             // 
             settingsLabel.AutoSize = true;
-            settingsLabel.Font = new Font("Segoe UI Variable Small", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            settingsLabel.Location = new Point(373, 1);
+            settingsLabel.Font = new Font("Segoe UI Variable Small Semibol", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            settingsLabel.Location = new Point(242, 61);
             settingsLabel.Name = "settingsLabel";
-            settingsLabel.Size = new Size(62, 15);
+            settingsLabel.Size = new Size(75, 17);
             settingsLabel.TabIndex = 12;
             settingsLabel.Text = "Ustawienia";
             settingsLabel.Visible = false;

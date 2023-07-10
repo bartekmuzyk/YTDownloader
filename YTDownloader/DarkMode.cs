@@ -45,7 +45,7 @@ namespace YTDownloader
             {
                 UseImmersiveDarkMode(control.Handle, true);
                 control.BackColor = Color.FromArgb(32, 32, 32);
-                control.ForeColor = Color.White;
+                control.ForeColor = Color.FromArgb(220, 220, 220);
             }
 
             try
@@ -58,7 +58,8 @@ namespace YTDownloader
             {
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.MouseOverBackColor = Color.FromArgb(60, 60, 60);
-                button.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 55);
+                button.FlatAppearance.BorderColor = Color.FromArgb(45, 45, 45);
+                button.FlatAppearance.BorderSize = 0;
                 button.FlatAppearance.MouseDownBackColor = Color.FromArgb(70, 70, 70);
                 button.BackColor = Color.FromArgb(45, 45, 45);
                 ControlDecoration.MakeControlRounded(button);
@@ -69,7 +70,7 @@ namespace YTDownloader
                 textBox.BackColor = Color.FromArgb(55, 55, 55);
                 textBox.BorderStyle = BorderStyle.FixedSingle;
                 textBox.ForeColor = Color.White;
-                ControlDecoration.MakeControlRounded(textBox, 1);
+                ControlDecoration.MakeControlRounded(textBox, 1, 1, 1, 3, 2);
             }
 
             foreach (var comboBox in control.Controls.OfType<ComboBox>())
@@ -89,7 +90,7 @@ namespace YTDownloader
 
             foreach (var groupBox in control.Controls.OfType<GroupBox>())
             {
-                groupBox.ForeColor = Color.White;
+                groupBox.ForeColor = Color.FromArgb(220, 220, 220);
                 AutoDarkMode(groupBox);
             }
         }

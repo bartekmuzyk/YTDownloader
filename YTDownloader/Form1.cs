@@ -45,7 +45,11 @@ namespace YTDownloader
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.darkMode) DarkMode.AutoDarkMode(this);
+            if (Properties.Settings.Default.darkMode)
+            {
+                DarkMode.AutoDarkMode(this);
+                githubLink.LinkColor = Color.DodgerBlue;
+            }
 
             ControlDecoration.MakeControlRounded(dlProgressBar, 1);
 
