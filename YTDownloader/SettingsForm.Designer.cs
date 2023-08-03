@@ -35,6 +35,7 @@
             darkModeCheckBox = new CheckBox();
             showNotificationCheckBox = new CheckBox();
             settingsPanel = new Panel();
+            micaCheckBox = new CheckBox();
             settingsPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Variable Small", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(186, 187);
+            label2.Location = new Point(186, 207);
             label2.Name = "label2";
             label2.Size = new Size(301, 16);
             label2.TabIndex = 2;
@@ -111,20 +112,31 @@
             // 
             // settingsPanel
             // 
+            settingsPanel.Controls.Add(micaCheckBox);
             settingsPanel.Controls.Add(downloadThumbnailsCheckBox);
             settingsPanel.Controls.Add(showNotificationCheckBox);
             settingsPanel.Controls.Add(showExtensionMessageCheckBox);
             settingsPanel.Controls.Add(darkModeCheckBox);
             settingsPanel.Location = new Point(12, 44);
             settingsPanel.Name = "settingsPanel";
-            settingsPanel.Size = new Size(475, 109);
+            settingsPanel.Size = new Size(475, 132);
             settingsPanel.TabIndex = 6;
+            // 
+            // micaCheckBox
+            // 
+            micaCheckBox.AutoSize = true;
+            micaCheckBox.Location = new Point(3, 107);
+            micaCheckBox.Name = "micaCheckBox";
+            micaCheckBox.Size = new Size(81, 19);
+            micaCheckBox.TabIndex = 6;
+            micaCheckBox.Text = "Efekt Mica";
+            micaCheckBox.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(499, 212);
+            ClientSize = new Size(499, 232);
             Controls.Add(settingsPanel);
             Controls.Add(label2);
             Controls.Add(titleLabel);
@@ -152,5 +164,6 @@
         private CheckBox darkModeCheckBox;
         private CheckBox showNotificationCheckBox;
         private Panel settingsPanel;
+        private CheckBox micaCheckBox;
     }
 }

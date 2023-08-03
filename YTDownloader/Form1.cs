@@ -51,6 +51,13 @@ namespace YTDownloader
                 githubLink.LinkColor = Color.DodgerBlue;
             }
 
+            if (Properties.Settings.Default.mica)
+            {
+                BackColor = Color.Black;
+                Dwm.AutoExtendFrameIntoClientArea(Handle);
+                Dwm.ApplyMicaBackdropToWindow(Handle);
+            }
+
             ControlDecoration.MakeControlRounded(dlProgressBar, 1);
 
             MaximumSize = MinimumSize = Size;
@@ -393,7 +400,7 @@ namespace YTDownloader
 
         private void settingsBtn_Click(object sender, EventArgs e)
         {
-            new SettingsForm().Show();
+            new SettingsForm().ShowDialog();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

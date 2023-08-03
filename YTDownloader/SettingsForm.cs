@@ -37,6 +37,13 @@ namespace YTDownloader
         {
             if (Properties.Settings.Default.darkMode) DarkMode.AutoDarkMode(this);
 
+            if (Properties.Settings.Default.mica)
+            {
+                BackColor = Color.Black;
+                Dwm.AutoExtendFrameIntoClientArea(Handle);
+                Dwm.ApplyMicaBackdropToWindow(Handle);
+            }
+
             MaximumSize = MinimumSize = Size;
 
             titleLabel.Visible = false;
@@ -57,6 +64,7 @@ namespace YTDownloader
             showExtensionMessageCheckBox.Checked = Properties.Settings.Default.showExtensionMessage;
             darkModeCheckBox.Checked = Properties.Settings.Default.darkMode;
             showNotificationCheckBox.Checked = Properties.Settings.Default.showNotification;
+            micaCheckBox.Checked = Properties.Settings.Default.mica;
         }
 
         private void SettingsForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,7 +77,9 @@ namespace YTDownloader
                 MessageBox.Show("Tryb ciemny zostanie zaaplikowany po restarcie aplikacji.");
             }
             Properties.Settings.Default.darkMode = darkModeCheckBox.Checked;
+
             Properties.Settings.Default.showNotification = showNotificationCheckBox.Checked;
+            Properties.Settings.Default.mica = micaCheckBox.Checked;
 
             Properties.Settings.Default.Save();
         }

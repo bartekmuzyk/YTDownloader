@@ -314,14 +314,16 @@
             // 
             // toolStripStatusLabel1
             // 
+            toolStripStatusLabel1.BackColor = Color.Transparent;
             toolStripStatusLabel1.Font = new Font("Segoe UI Variable Small Semibol", 9F, FontStyle.Bold, GraphicsUnit.Point);
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.RightToLeft = RightToLeft.No;
-            toolStripStatusLabel1.Size = new Size(28, 17);
-            toolStripStatusLabel1.Text = "v3.1";
+            toolStripStatusLabel1.Size = new Size(30, 17);
+            toolStripStatusLabel1.Text = "v3.2";
             // 
             // githubLink
             // 
+            githubLink.BackColor = Color.Transparent;
             githubLink.Image = Properties.Resources.github;
             githubLink.IsLink = true;
             githubLink.Name = "githubLink";
