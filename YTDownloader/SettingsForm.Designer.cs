@@ -96,6 +96,7 @@
             darkModeCheckBox.TabIndex = 4;
             darkModeCheckBox.Text = "Tryb ciemny";
             darkModeCheckBox.UseVisualStyleBackColor = true;
+            darkModeCheckBox.CheckedChanged += darkModeCheckBox_CheckedChanged;
             // 
             // showNotificationCheckBox
             // 
@@ -125,7 +126,7 @@
             // micaCheckBox
             // 
             micaCheckBox.AutoSize = true;
-            micaCheckBox.Location = new Point(3, 107);
+            micaCheckBox.Location = new Point(98, 56);
             micaCheckBox.Name = "micaCheckBox";
             micaCheckBox.Size = new Size(81, 19);
             micaCheckBox.TabIndex = 6;

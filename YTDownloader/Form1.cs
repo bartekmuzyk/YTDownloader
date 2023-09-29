@@ -199,6 +199,11 @@ namespace YTDownloader
                         MessageBox.Show("Nie mo¿na odnaleŸæ filmu pod podanym adresem URL. Upewnij siê, ¿e film nie jest prywatny.", "Nie odnaleziono filmu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         ResetControls();
                     }
+                    catch (YoutubeExplodeException e)
+                    {
+                        MessageBox.Show(e.Message, "Ogólny b³¹d pobierania informacji o filmie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ResetControls();
+                    }
                 });
             }
             catch (ArgumentException exception)

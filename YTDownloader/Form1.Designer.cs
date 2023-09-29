@@ -319,7 +319,7 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.RightToLeft = RightToLeft.No;
             toolStripStatusLabel1.Size = new Size(30, 17);
-            toolStripStatusLabel1.Text = "v3.2";
+            toolStripStatusLabel1.Text = "v3.3";
             // 
             // githubLink
             // 

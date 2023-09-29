@@ -46,6 +46,8 @@ namespace YTDownloader
 
             MaximumSize = MinimumSize = Size;
 
+            micaCheckBox.Visible = Properties.Settings.Default.darkMode;
+
             titleLabel.Visible = false;
             settingsPanel.Visible = false;
 
@@ -63,6 +65,7 @@ namespace YTDownloader
             downloadThumbnailsCheckBox.Checked = Properties.Settings.Default.downloadThumbnails;
             showExtensionMessageCheckBox.Checked = Properties.Settings.Default.showExtensionMessage;
             darkModeCheckBox.Checked = Properties.Settings.Default.darkMode;
+
             showNotificationCheckBox.Checked = Properties.Settings.Default.showNotification;
             micaCheckBox.Checked = Properties.Settings.Default.mica;
         }
@@ -79,9 +82,14 @@ namespace YTDownloader
             Properties.Settings.Default.darkMode = darkModeCheckBox.Checked;
 
             Properties.Settings.Default.showNotification = showNotificationCheckBox.Checked;
-            Properties.Settings.Default.mica = micaCheckBox.Checked;
+            Properties.Settings.Default.mica = darkModeCheckBox.Checked && micaCheckBox.Checked;
 
             Properties.Settings.Default.Save();
+        }
+
+        private void darkModeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            micaCheckBox.Visible = ((CheckBox)sender).Checked;
         }
     }
 }
