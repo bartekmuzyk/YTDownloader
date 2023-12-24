@@ -43,9 +43,9 @@
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI Variable Display", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            titleLabel.Location = new Point(12, 9);
+            titleLabel.Location = new Point(14, 12);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new Size(385, 32);
+            titleLabel.Size = new Size(476, 40);
             titleLabel.TabIndex = 0;
             titleLabel.Text = "Ustawienia YouTube Downloader";
             // 
@@ -55,9 +55,10 @@
             downloadThumbnailsCheckBox.Checked = true;
             downloadThumbnailsCheckBox.CheckState = CheckState.Checked;
             downloadThumbnailsCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            downloadThumbnailsCheckBox.Location = new Point(3, 3);
+            downloadThumbnailsCheckBox.Location = new Point(3, 4);
+            downloadThumbnailsCheckBox.Margin = new Padding(3, 4, 3, 4);
             downloadThumbnailsCheckBox.Name = "downloadThumbnailsCheckBox";
-            downloadThumbnailsCheckBox.Size = new Size(125, 20);
+            downloadThumbnailsCheckBox.Size = new Size(148, 24);
             downloadThumbnailsCheckBox.TabIndex = 1;
             downloadThumbnailsCheckBox.Text = "Pobieraj miniaturki";
             downloadThumbnailsCheckBox.UseVisualStyleBackColor = true;
@@ -65,13 +66,13 @@
             // label2
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Variable Small", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(186, 207);
+            label2.Location = new Point(12, 276);
             label2.Name = "label2";
-            label2.Size = new Size(301, 16);
+            label2.Size = new Size(545, 24);
             label2.TabIndex = 2;
             label2.Text = "Ustawienia zostaną zapisane po zamknięciu tego okna.";
+            label2.TextAlign = ContentAlignment.BottomRight;
             // 
             // showExtensionMessageCheckBox
             // 
@@ -79,9 +80,10 @@
             showExtensionMessageCheckBox.Checked = true;
             showExtensionMessageCheckBox.CheckState = CheckState.Checked;
             showExtensionMessageCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            showExtensionMessageCheckBox.Location = new Point(3, 29);
+            showExtensionMessageCheckBox.Location = new Point(3, 39);
+            showExtensionMessageCheckBox.Margin = new Padding(3, 4, 3, 4);
             showExtensionMessageCheckBox.Name = "showExtensionMessageCheckBox";
-            showExtensionMessageCheckBox.Size = new Size(265, 20);
+            showExtensionMessageCheckBox.Size = new Size(324, 24);
             showExtensionMessageCheckBox.TabIndex = 3;
             showExtensionMessageCheckBox.Text = "Pokazuj komunikat o rozszerzeniu przy starcie";
             showExtensionMessageCheckBox.UseVisualStyleBackColor = true;
@@ -90,9 +92,10 @@
             // 
             darkModeCheckBox.AutoSize = true;
             darkModeCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            darkModeCheckBox.Location = new Point(3, 55);
+            darkModeCheckBox.Location = new Point(3, 73);
+            darkModeCheckBox.Margin = new Padding(3, 4, 3, 4);
             darkModeCheckBox.Name = "darkModeCheckBox";
-            darkModeCheckBox.Size = new Size(89, 20);
+            darkModeCheckBox.Size = new Size(112, 24);
             darkModeCheckBox.TabIndex = 4;
             darkModeCheckBox.Text = "Tryb ciemny";
             darkModeCheckBox.UseVisualStyleBackColor = true;
@@ -104,9 +107,10 @@
             showNotificationCheckBox.Checked = true;
             showNotificationCheckBox.CheckState = CheckState.Checked;
             showNotificationCheckBox.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            showNotificationCheckBox.Location = new Point(3, 81);
+            showNotificationCheckBox.Location = new Point(3, 108);
+            showNotificationCheckBox.Margin = new Padding(3, 4, 3, 4);
             showNotificationCheckBox.Name = "showNotificationCheckBox";
-            showNotificationCheckBox.Size = new Size(285, 20);
+            showNotificationCheckBox.Size = new Size(347, 24);
             showNotificationCheckBox.TabIndex = 5;
             showNotificationCheckBox.Text = "Pokaż powiadomienie po zakończeniu pobierania";
             showNotificationCheckBox.UseVisualStyleBackColor = true;
@@ -118,30 +122,33 @@
             settingsPanel.Controls.Add(showNotificationCheckBox);
             settingsPanel.Controls.Add(showExtensionMessageCheckBox);
             settingsPanel.Controls.Add(darkModeCheckBox);
-            settingsPanel.Location = new Point(12, 44);
+            settingsPanel.Location = new Point(14, 59);
+            settingsPanel.Margin = new Padding(3, 4, 3, 4);
             settingsPanel.Name = "settingsPanel";
-            settingsPanel.Size = new Size(475, 132);
+            settingsPanel.Size = new Size(543, 176);
             settingsPanel.TabIndex = 6;
             // 
             // micaCheckBox
             // 
             micaCheckBox.AutoSize = true;
-            micaCheckBox.Location = new Point(98, 56);
+            micaCheckBox.Location = new Point(121, 73);
+            micaCheckBox.Margin = new Padding(3, 4, 3, 4);
             micaCheckBox.Name = "micaCheckBox";
-            micaCheckBox.Size = new Size(81, 19);
+            micaCheckBox.Size = new Size(100, 24);
             micaCheckBox.TabIndex = 6;
             micaCheckBox.Text = "Efekt Mica";
             micaCheckBox.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(499, 232);
+            ClientSize = new Size(570, 309);
             Controls.Add(settingsPanel);
             Controls.Add(label2);
             Controls.Add(titleLabel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "SettingsForm";
